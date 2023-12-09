@@ -18,7 +18,7 @@ app.use(bodyparser.json())
 .use('/api/products',productsRouts)
 .use('/api/orders',ordersRouts)
 .use((err, req, res, next) => {
-    console.log(err)
+    log.debug(err)
     res.status(err.status || 500).send('Something went wrong!')
 })
 
